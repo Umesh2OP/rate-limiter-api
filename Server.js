@@ -14,7 +14,7 @@ async function startServer() {
     await connectDB(); // Ensure DB connects before starting server
 
     app.listen(PORT, () => {
-      console.log(`🚀 Server is running on port ${PORT}`);
+      console.log(` Server is running on port ${PORT}`);
     });
   } catch (error) {
     console.error("Failed to start server:", error);

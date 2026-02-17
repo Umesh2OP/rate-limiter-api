@@ -7,8 +7,8 @@ const MAX_REQ = 5;
 
 async function RedisRateLimiter(req, res, next) {
   try {
-    const clientip = req.ip;
-    const key = `rate:${clientip}`;
+   const userId = req.user.id; 
+    const key = `rate-limit:${userId}`
     const currentcount = await redisClient.get(key);
 
     if (currentcount && parseInt(currentcount) >= MAX_REQ) {
